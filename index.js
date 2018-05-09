@@ -1,6 +1,7 @@
+const config = require('./config.js')
 const express = require('express')
 const bodyParser = require('body-parser')
-const db = require('monk')('mongodb://admin2:password@ds048878.mlab.com:48878/tv-demo-db')
+const db = require('monk')(config.mongoConnString)
 const showsCollection = db.get('shows')
 
 const app = express()
